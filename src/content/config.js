@@ -7,6 +7,13 @@
 // Audio — if the file is missing the music button is hidden gracefully
 export const MUSIC_SRC = '/audio/kesariya.mp3';
 
+// Bride & Groom individual portrait photos for the introduction section
+// Leave empty string '' to show the elegant dark panel with outline person icon
+export const COUPLE_PHOTOS = {
+  bride: '', // e.g. '/images/bride.jpg'
+  groom: '', // e.g. '/images/groom.jpg'
+};
+
 // RSVP WhatsApp (E.164 format, no spaces)
 export const RSVP_PHONE = '919993476309';
 
@@ -36,4 +43,11 @@ export const FEATURES = {
   rsvp: true,          // RSVP WhatsApp section
   gallery: true,       // gallery section
   addToCalendar: true, // Add to Calendar buttons
+};
+
+// Venue overrides (empty string hides street address line)
+export const venues = {
+  mataPoojan: {
+    address: '', // empty by default: shows only "Nij Niwas (Family Residence), Ujjain"
+  },
 };
