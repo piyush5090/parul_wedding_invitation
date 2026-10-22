@@ -1,0 +1,713 @@
+/* ─── The Wedding Celebrations: Scoped Stylesheet ───────────────────────── */
+
+.wcSection,
+.wc-section {
+  position: relative;
+  width: 100%;
+  background-color: #0d0d0f;
+  color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+.wcContainer,
+.wc-container {
+  position: relative;
+  z-index: 10;
+  width: min(1200px, calc(100% - 48px));
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ─── Header Block ─── */
+
+.wcEyebrowRow,
+.wc-eyebrow-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.wcEyebrowLine,
+.wc-eyebrow-line {
+  width: 48px;
+  height: 1px;
+  background-color: rgba(138, 111, 46, 0.6);
+  flex-shrink: 0;
+}
+
+.wcEyebrowText,
+.wc-eyebrow-text {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #c5a059;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.wcTitle,
+.wc-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  text-align: center;
+  margin: 0 0 18px 0;
+  line-height: 1.2;
+}
+
+.wcDateRow,
+.wc-date-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 16px;
+  user-select: none;
+  font-variant-numeric: lining-nums;
+}
+
+.wcDateText,
+.wc-date-text {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #f5ecd5;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+  font-variant-numeric: lining-nums;
+}
+
+.wcIntro,
+.wc-intro {
+  max-width: 640px;
+  text-align: center;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 auto 48px auto;
+  font-size: 15px;
+}
+
+/* ─── Main Two-Column Layout ─── */
+
+.wcGrid,
+.wc-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (min-width: 1100px) {
+  .wcGrid,
+  .wc-grid {
+    grid-template-columns: minmax(0, 45%) minmax(0, 55%);
+    gap: 32px;
+  }
+}
+
+/* ─── Left Column: Sticky 3D Stage Card ─── */
+
+.wcStageCol,
+.wc-stage-col {
+  width: 100%;
+}
+
+@media (min-width: 1100px) {
+  .wcStageCol,
+  .wc-stage-col {
+    position: sticky;
+    top: 120px;
+  }
+}
+
+.wcStageCard,
+.wc-stage-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 480px;
+  height: 480px;
+  border-radius: 28px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #15151a, #0f0f13);
+  border: 1px solid rgba(138, 111, 46, 0.7);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.6);
+  padding: 24px 24px 18px 24px;
+}
+
+@media (max-width: 1099px) and (min-width: 700px) {
+  .wcStageCard,
+  .wc-stage-card {
+    min-height: 380px;
+    height: 380px;
+  }
+}
+
+@media (max-width: 699px) {
+  .wcStageCard,
+  .wc-stage-card {
+    min-height: 320px;
+    height: 320px;
+    padding: 20px 18px 14px 18px;
+  }
+}
+
+.wcStageHeader,
+.wc-stage-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  z-index: 10;
+  user-select: none;
+}
+
+.wcStageHeaderLine,
+.wc-stage-header-line {
+  width: 24px;
+  height: 1px;
+  background-color: rgba(197, 160, 89, 0.4);
+  flex-shrink: 0;
+}
+
+.wcStageHeaderLabel,
+.wc-stage-header-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #c5a059;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.wcStageCanvasArea,
+.wc-stage-canvas-area {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+.wcStageFooter,
+.wc-stage-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 10;
+  user-select: none;
+  width: 100%;
+}
+
+.wcStageCaption,
+.wc-stage-caption {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.04em;
+  font-weight: 300;
+  text-align: center;
+}
+
+.wcStageDots,
+.wc-stage-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.wcDotBtn,
+.wc-dot-btn {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: rgba(138, 111, 46, 0.35);
+  border: 1px solid rgba(197, 160, 89, 0.5);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.wcDotBtn:hover,
+.wc-dot-btn:hover {
+  background: rgba(197, 160, 89, 0.65);
+  transform: scale(1.15);
+}
+
+.wcDotBtnActive,
+.wc-dot-btn-active {
+  background: #c5a059;
+  box-shadow: 0 0 10px rgba(197, 160, 89, 0.8);
+  transform: scale(1.25);
+  border-color: #f5ecd5;
+}
+
+/* ─── Right Column: Timeline Cards ─── */
+
+.wcTimelineCol,
+.wc-timeline-col {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 32px;
+}
+
+@media (max-width: 699px) {
+  .wcTimelineCol,
+  .wc-timeline-col {
+    padding-left: 24px;
+    gap: 16px;
+  }
+}
+
+.wcTimelineTrack,
+.wc-timeline-track {
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  left: 11px;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    rgba(138, 111, 46, 0.7),
+    rgba(197, 160, 89, 0.4) 50%,
+    rgba(138, 111, 46, 0.7)
+  );
+}
+
+@media (max-width: 699px) {
+  .wcTimelineTrack,
+  .wc-timeline-track {
+    left: 7px;
+  }
+}
+
+.wcTimelineCardWrapper,
+.wc-timeline-card-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.wcTimelineDiamond,
+.wc-timeline-diamond {
+  position: absolute;
+  top: 36px;
+  left: -27px;
+  width: 12px;
+  height: 12px;
+  background-color: #121215;
+  border: 1.5px solid #c5a059;
+  transform: rotate(45deg);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 699px) {
+  .wcTimelineDiamond,
+  .wc-timeline-diamond {
+    left: -23px;
+    width: 10px;
+    height: 10px;
+    top: 26px;
+  }
+}
+
+.wcTimelineDiamondActive,
+.wc-timeline-diamond-active {
+  background-color: #c5a059;
+  box-shadow: 0 0 12px rgba(197, 160, 89, 0.9);
+  border-color: #f8f1de;
+  transform: rotate(45deg) scale(1.15);
+}
+
+/* ─── Event Card Style (Strict Mata Poojan Token Match) ─── */
+
+.wcEventCard,
+.wc-event-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 36px 32px 32px;
+  border-radius: 28px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(138, 111, 46, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.wcEventCard:hover,
+.wc-event-card:hover {
+  border-color: rgba(197, 160, 89, 0.85);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.55);
+}
+
+.wcEventCardActive,
+.wc-event-card-active {
+  border-color: rgba(197, 160, 89, 0.95);
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: 0 16px 44px rgba(197, 160, 89, 0.15);
+}
+
+@media (max-width: 699px) {
+  .wcEventCard,
+  .wc-event-card {
+    padding: 24px 20px 24px;
+  }
+}
+
+.wcCardTopSheen,
+.wc-card-top-sheen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgba(197, 160, 89, 0.6), transparent);
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.wcEventCard:hover .wcCardTopSheen,
+.wcEventCardActive .wcCardTopSheen,
+.wc-event-card:hover .wc-card-top-sheen,
+.wc-event-card-active .wc-card-top-sheen {
+  opacity: 1;
+}
+
+.wcBadge,
+.wc-badge {
+  align-self: flex-start;
+  padding: 6px 14px;
+  line-height: 1.2;
+  margin: 0 0 16px;
+  position: static;
+  border-radius: 9999px;
+  background: rgba(138, 111, 46, 0.2);
+  border: 1px solid rgba(138, 111, 46, 0.4);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c5a059;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wcBadgeDot,
+.wc-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: #c5a059;
+}
+
+.wcCardTitle,
+.wc-card-title {
+  margin: 0 0 18px 0;
+  font-size: 1.65rem;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  word-break: break-word;
+}
+
+.wcCardDivider,
+.wc-card-divider {
+  height: 1px;
+  margin: 0 0 18px 0;
+  background: linear-gradient(to right, rgba(138, 111, 46, 0.6), rgba(138, 111, 46, 0.2), transparent);
+}
+
+.wcTimeRow,
+.wc-time-row {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  column-gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.wcIconCol,
+.wc-icon-col {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c5a059;
+}
+
+.wcTimeText,
+.wc-time-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #f5e6c8;
+}
+
+.wcNoteText,
+.wc-note-text {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.7);
+  word-break: break-word;
+}
+
+/* ─── Full-Width Venue Card ─── */
+
+.wcVenueCard,
+.wc-venue-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 36px;
+  padding: 36px 32px 32px;
+  border-radius: 28px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(138, 111, 46, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+}
+
+@media (max-width: 699px) {
+  .wcVenueCard,
+  .wc-venue-card {
+    padding: 24px 20px 24px;
+    margin-top: 28px;
+  }
+}
+
+.wcVenueCardContent,
+.wc-venue-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 900px) {
+  .wcVenueCardContent,
+  .wc-venue-card-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.wcVenueInfo,
+.wc-venue-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.wcVenueHeaderBadge,
+.wc-venue-header-badge {
+  align-self: flex-start;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  background: rgba(138, 111, 46, 0.2);
+  border: 1px solid rgba(138, 111, 46, 0.4);
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c5a059;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.wcVenueTitle,
+.wc-venue-title {
+  font-size: 1.75rem;
+  margin: 0;
+  color: #ffffff;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.wcVenueLocationRow,
+.wc-venue-location-row {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  column-gap: 12px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.wcVenueAddressText,
+.wc-venue-address-text {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+}
+
+.wcVenueActions,
+.wc-venue-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+  min-width: 280px;
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .wcVenueActions,
+  .wc-venue-actions {
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  .wcVenueActions,
+  .wc-venue-actions {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* ─── Buttons (Exact Match to Mata Poojan Pill Styles) ─── */
+
+.wcPrimaryBtn,
+.wc-primary-btn {
+  width: 100%;
+  height: 46px;
+  border-radius: 999px;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid #c5a059;
+  background: rgba(197, 160, 89, 0.15);
+  color: #f8f1de;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  padding-inline: 20px;
+}
+
+.wcPrimaryBtn:hover,
+.wc-primary-btn:hover {
+  background: rgba(197, 160, 89, 0.25);
+  border-color: #dfc07a;
+  color: #ffffff;
+}
+
+.wcPrimaryBtn:focus-visible,
+.wc-primary-btn:focus-visible {
+  outline: 2px solid #c5a059;
+  outline-offset: 2px;
+}
+
+.wcSecondaryBtn,
+.wc-secondary-btn {
+  width: 100%;
+  height: 46px;
+  border-radius: 999px;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.85);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  padding-inline: 20px;
+}
+
+.wcSecondaryBtn:hover,
+.wc-secondary-btn:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+}
+
+.wcSecondaryBtn:focus-visible,
+.wc-secondary-btn:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* ─── Footer Line ─── */
+
+.wcFooterLineRow,
+.wc-footer-line-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 48px;
+  width: 100%;
+  user-select: none;
+}
+
+.wcFooterLineBar,
+.wc-footer-line-bar {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(138, 111, 46, 0.6));
+  flex-shrink: 0;
+}
+
+.wcFooterLineBarRight,
+.wc-footer-line-bar-right {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(to left, transparent, rgba(138, 111, 46, 0.6));
+  flex-shrink: 0;
+}
+
+.wcFooterLineText,
+.wc-footer-line-text {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #dfc07a;
+  font-weight: 400;
+  text-align: center;
+}

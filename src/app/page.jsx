@@ -5,6 +5,7 @@ import ModernNavbar from '@/components/ui/ModernNavbar';
 import ModernHero from '@/components/hero/ModernHero';
 import BrideGroomSection from '@/components/sections/BrideGroomSection';
 import MataPoojanSection from '@/components/sections/MataPoojanSection';
+import WeddingCelebrations from '@/components/sections/WeddingCelebrations';
 import CoupleStorySection from '@/components/sections/CoupleStorySection';
 import ModernCountdown from '@/components/sections/ModernCountdown';
 import ModernEvents from '@/components/sections/ModernEvents';
@@ -50,6 +51,9 @@ export default function WeddingPage() {
 
       {/* 2b. Mata Poojan & Snehbhoj at Bride's Home */}
       <MataPoojanSection />
+
+      {/* 2c. The Wedding Celebrations */}
+      <WeddingCelebrations />
 
       {/* 3. Meet the Bride & Groom (Our Story) */}
       <CoupleStorySection />

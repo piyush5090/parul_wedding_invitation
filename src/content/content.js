@@ -109,6 +109,57 @@ const content = {
       threeHint: 'Interactive 3D • Move cursor or tap to sway the sacred flame',
     },
 
+    weddingCelebrations: {
+      eyebrow: 'ALIGARH · WEDDING CEREMONIES',
+      title: 'The Wedding Celebrations',
+      dateBanner: 'Friday, 20 November 2026',
+      intro:
+        'Join us as two families unite in joy, with rituals, music and blessings, followed by a warm celebration dinner.',
+      footerLine: 'WARMLY WELCOMING YOU IN ALIGARH',
+      threeTitle: 'THE SACRED STAGE',
+      threeHint: 'Interactive 3D · move your cursor or tap to look around',
+      threeAlt: 'Interactive 3D representation of the wedding ceremonies',
+      events: [
+        {
+          id: 'lagn-sagai',
+          badge: 'SACRED UNION',
+          title: 'Lagn & Sagai',
+          time: 'Evening 4:00 PM',
+          note: 'The ring ceremony and the auspicious lagn rituals.',
+          ariaLabel: 'Event 1: Lagn & Sagai, Evening 4:00 PM',
+        },
+        {
+          id: 'baraat-swagat',
+          badge: 'GRAND WELCOME',
+          title: 'Baraat Swagat',
+          time: 'Evening 7:00 PM',
+          note: 'A joyful welcome for the baraat with music and celebration.',
+          ariaLabel: 'Event 2: Baraat Swagat, Evening 7:00 PM',
+        },
+        {
+          id: 'ashirwad-bhoj',
+          badge: 'BLESSINGS & FEAST',
+          title: 'Ashirwad Samaroh & Swaruchi Bhoj',
+          time: 'From 7:30 PM until your arrival',
+          note: 'Bless the couple and enjoy dinner of your choice with family and friends.',
+          ariaLabel: 'Event 3: Ashirwad Samaroh & Swaruchi Bhoj, From 7:30 PM until your arrival',
+        },
+      ],
+      venue: {
+        label: 'WEDDING VENUE',
+        name: 'Swarnbhoomi',
+        address: 'Near Khereshwar Mandir, Khair Road, Aligarh (U.P.)',
+        mapQuery: 'Swarnbhoomi, near Khereshwar Mandir, Khair Road, Aligarh (U.P.)',
+        mapsBtn: 'View Venue Map',
+        calendarBtn: 'Add to Calendar',
+      },
+      dotLabels: [
+        'Lagn & Sagai (Interlocking Rings)',
+        'Baraat Swagat (Jaimala Garland)',
+        'Ashirwad & Bhoj (Golden Kalash)',
+      ],
+    },
+
     couple: {
       bride: {
         name: 'Parul Sharma',
@@ -351,6 +402,57 @@ const content = {
       mapsBtn: 'स्थान का नक्शा देखें',
       threeTitle: 'पावन अखंड ज्योति',
       threeHint: 'इंटरैक्टिव 3D • ज्योति को स्पर्श करें या कर्सर घुमाएं',
+    },
+
+    weddingCelebrations: {
+      eyebrow: 'अलीगढ़ · विवाह समारोह',
+      title: 'विवाह समारोह',
+      dateBanner: 'दि. 20 नवम्बर 2026, शुक्रवार',
+      intro:
+        'दो परिवारों के मिलन के इस आनंदमय अवसर पर आप सादर आमंत्रित हैं। रस्मों, संगीत और आशीर्वाद के साथ स्नेहपूर्ण स्वरुचिभोज का आयोजन है।',
+      footerLine: 'अलीगढ़ में आपका हार्दिक स्वागत है',
+      threeTitle: 'मंगल वेदी',
+      threeHint: 'इंटरैक्टिव 3D · देखने के लिए कर्सर घुमाएँ या टैप करें',
+      threeAlt: 'विवाह समारोहों का इंटरैक्टिव 3D प्रदर्शन',
+      events: [
+        {
+          id: 'lagn-sagai',
+          badge: 'पावन बंधन',
+          title: 'लग्न एवं सगाई',
+          time: 'शाम 04 बजे',
+          note: 'सगाई की रस्म एवं शुभ लग्न अनुष्ठान।',
+          ariaLabel: 'कार्यक्रम 1: लग्न एवं सगाई, शाम 04 बजे',
+        },
+        {
+          id: 'baraat-swagat',
+          badge: 'भव्य स्वागत',
+          title: 'बारात स्वागत',
+          time: 'शाम 07 बजे',
+          note: 'संगीत और उल्लास के साथ बारात का भव्य स्वागत।',
+          ariaLabel: 'कार्यक्रम 2: बारात स्वागत, शाम 07 बजे',
+        },
+        {
+          id: 'ashirwad-bhoj',
+          badge: 'आशीर्वाद एवं भोज',
+          title: 'आशीर्वाद समारोह एवं स्वरुचिभोज',
+          time: 'रात्रि 7:30 बजे से आपके आगमन तक',
+          note: 'वर-वधू को आशीर्वाद दें और परिवार व मित्रों के साथ स्वरुचिभोज का आनंद लें।',
+          ariaLabel: 'कार्यक्रम 3: आशीर्वाद समारोह एवं स्वरुचिभोज, रात्रि 7:30 बजे से आपके आगमन तक',
+        },
+      ],
+      venue: {
+        label: 'विवाह स्थल',
+        name: 'स्वर्णभूमि',
+        address: 'निकट खेरेश्वर मंदिर, खैर रोड, अलीगढ़ (उ.प्र.)',
+        mapQuery: 'Swarnbhoomi, near Khereshwar Mandir, Khair Road, Aligarh (U.P.)',
+        mapsBtn: 'वेन्यू मैप देखें',
+        calendarBtn: 'कैलेंडर में जोड़ें',
+      },
+      dotLabels: [
+        'लग्न एवं सगाई (अंगूठी युगल)',
+        'बारात स्वागत (जयमाला)',
+        'आशीर्वाद एवं भोज (मंगल कलश)',
+      ],
     },
 
     couple: {
