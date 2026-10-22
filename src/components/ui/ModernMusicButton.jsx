@@ -7,15 +7,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function ModernMusicButton() {
   const { isAvailable, isPlaying, toggle } = useAudio();
   const { lang } = useLanguage();
-  const c = content[lang].music;
+  const c = content[lang]?.music || { play: 'Play', pause: 'Pause' };
 
   if (!isAvailable) return null;
 
   return (
     <motion.button
       onClick={toggle}
-      aria-label={isPlaying ? c.pause : c.play}
-      title={isPlaying ? c.pause : c.play}
+      aria-label={isPlaying ? (c.pause || 'Pause') : (c.play || 'Play')}
+      title={isPlaying ? (c.pause || 'Pause') : (c.play || 'Play')}
       className="fixed bottom-6 right-6 z-[9000] flex items-center gap-2.5 rounded-full border border-gold-warm/40 bg-[#1A1A1E]/80 backdrop-blur-md px-4 py-2.5 hover:border-gold-warm transition-all shadow-xl cursor-pointer"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}

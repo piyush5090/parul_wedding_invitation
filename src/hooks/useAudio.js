@@ -1,95 +1,170 @@
 'use client';
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { MUSIC_SRC } from '@/content/config';
 
 /**
- * useAudio — wraps the native Audio API with:
- * - Graceful fallback when the file is missing (isAvailable = false)
- * - Fade in/out so it never blasts
- * - Auto-pause when the tab is hidden
- * - play/pause state memory
- *
- * @returns {{ isAvailable, isPlaying, toggle, start }}
+ * Global audio singleton:
+ * Ensures all components (ModernMusicButton, ModernIntro, etc.)
+ * share the exact same audio element, state, and auto-play logic.
  */
-export function useAudio() {
-  const audioRef = useRef(null);
-  const [isAvailable, setIsAvailable] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const fadeRef = useRef(null);
+let globalAudio = null;
+let globalIsAvailable = false;
+let globalIsPlaying = false;
+let globalFadeRef = null;
+let listeners = new Set();
+let initialized = false;
 
-  // Probe whether the audio file exists (HEAD request)
-  useEffect(() => {
-    fetch(MUSIC_SRC, { method: 'HEAD' })
-      .then((r) => {
-        if (r.ok) {
-          const audio = new Audio(MUSIC_SRC);
-          audio.loop = true;
-          audio.volume = 0;
-          audioRef.current = audio;
-          setIsAvailable(true);
-        }
-      })
-      .catch(() => setIsAvailable(false));
-  }, []);
+function notifyListeners() {
+  listeners.forEach((listener) => {
+    listener({
+      isAvailable: globalIsAvailable,
+      isPlaying: globalIsPlaying,
+    });
+  });
+}
 
-  // Pause when tab hidden
-  useEffect(() => {
-    const onVisibility = () => {
-      if (!audioRef.current) return;
-      if (document.hidden) {
-        audioRef.current.pause();
-      } else if (isPlaying) {
-        audioRef.current.play().catch(() => {});
-      }
-    };
-    document.addEventListener('visibilitychange', onVisibility);
-    return () => document.removeEventListener('visibilitychange', onVisibility);
-  }, [isPlaying]);
+function fadeTo(targetVolume, duration = 1500) {
+  if (!globalAudio) return;
+  const audio = globalAudio;
+  const start = audio.volume;
+  const diff = targetVolume - start;
+  const startTime = performance.now();
 
-  const fadeTo = useCallback((targetVolume, duration = 1500) => {
-    if (!audioRef.current) return;
-    const audio = audioRef.current;
-    const start = audio.volume;
-    const diff = targetVolume - start;
-    const startTime = performance.now();
-    cancelAnimationFrame(fadeRef.current);
+  if (globalFadeRef) {
+    cancelAnimationFrame(globalFadeRef);
+    globalFadeRef = null;
+  }
 
-    function step(now) {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      audio.volume = start + diff * progress;
-      if (progress < 1) {
-        fadeRef.current = requestAnimationFrame(step);
-      } else if (targetVolume === 0) {
+  function step(now) {
+    const elapsed = Math.max(0, now - startTime);
+    const progress = Math.min(elapsed / duration, 1);
+    const nextVol = start + diff * progress;
+    audio.volume = Math.max(0, Math.min(1, nextVol));
+
+    if (progress < 1) {
+      globalFadeRef = requestAnimationFrame(step);
+    } else {
+      globalFadeRef = null;
+      if (targetVolume === 0) {
         audio.pause();
-        setIsPlaying(false);
+        audio.volume = 0;
+        globalIsPlaying = false;
+        notifyListeners();
       }
     }
-    fadeRef.current = requestAnimationFrame(step);
+  }
+
+  globalFadeRef = requestAnimationFrame(step);
+}
+
+function playAudio() {
+  if (!globalAudio) return Promise.reject(new Error('No audio element'));
+  globalAudio.volume = 0;
+  return globalAudio.play().then(() => {
+    globalIsPlaying = true;
+    notifyListeners();
+    fadeTo(0.6, 1200);
+  });
+}
+
+function initGlobalAudio() {
+  if (initialized || typeof window === 'undefined') return;
+  initialized = true;
+
+  fetch(MUSIC_SRC, { method: 'HEAD' })
+    .then((r) => {
+      if (r.ok) {
+        const audio = new Audio(MUSIC_SRC);
+        audio.loop = true;
+        audio.volume = 0;
+        audio.preload = 'auto';
+        globalAudio = audio;
+        globalIsAvailable = true;
+        notifyListeners();
+
+        // 1. Try to autoplay immediately
+        playAudio().catch(() => {
+          // 2. If autoplay policy blocked it, start on the first user interaction
+          const unlock = () => {
+            if (globalAudio && !globalIsPlaying) {
+              playAudio().catch(() => {});
+            }
+            cleanup();
+          };
+
+          const events = ['click', 'touchstart', 'pointerdown', 'scroll', 'keydown'];
+          const cleanup = () => {
+            events.forEach((ev) => window.removeEventListener(ev, unlock));
+          };
+
+          events.forEach((ev) =>
+            window.addEventListener(ev, unlock, { once: true, passive: true })
+          );
+        });
+      }
+    })
+    .catch(() => {
+      globalIsAvailable = false;
+      notifyListeners();
+    });
+
+  // Pause when browser tab is hidden
+  const onVisibility = () => {
+    if (!globalAudio) return;
+    if (document.hidden) {
+      if (globalIsPlaying) {
+        globalAudio.pause();
+      }
+    } else if (globalIsPlaying) {
+      globalAudio.play().catch(() => {});
+    }
+  };
+  document.addEventListener('visibilitychange', onVisibility);
+}
+
+export function useAudio() {
+  const [state, setState] = useState({
+    isAvailable: globalIsAvailable,
+    isPlaying: globalIsPlaying,
+  });
+
+  useEffect(() => {
+    initGlobalAudio();
+
+    const listener = (newState) => {
+      setState(newState);
+    };
+
+    listeners.add(listener);
+    // Sync current state immediately
+    setState({
+      isAvailable: globalIsAvailable,
+      isPlaying: globalIsPlaying,
+    });
+
+    return () => {
+      listeners.delete(listener);
+    };
   }, []);
 
-  /** Must be called from a user gesture (curtain tap). */
   const start = useCallback(() => {
-    if (!audioRef.current || isPlaying) return;
-    audioRef.current.volume = 0;
-    audioRef.current.play().then(() => {
-      fadeTo(0.6);
-      setIsPlaying(true);
-    }).catch(() => {});
-  }, [isPlaying, fadeTo]);
+    if (!globalAudio || globalIsPlaying) return;
+    playAudio().catch(() => {});
+  }, []);
 
   const toggle = useCallback(() => {
-    if (!audioRef.current) return;
-    if (isPlaying) {
-      fadeTo(0);
+    if (!globalAudio) return;
+    if (globalIsPlaying) {
+      fadeTo(0, 800);
     } else {
-      audioRef.current.volume = 0;
-      audioRef.current.play().then(() => {
-        fadeTo(0.6);
-        setIsPlaying(true);
-      }).catch(() => {});
+      playAudio().catch(() => {});
     }
-  }, [isPlaying, fadeTo]);
+  }, []);
 
-  return { isAvailable, isPlaying, toggle, start };
+  return {
+    isAvailable: state.isAvailable,
+    isPlaying: state.isPlaying,
+    toggle,
+    start,
+  };
 }

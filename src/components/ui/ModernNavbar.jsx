@@ -7,26 +7,38 @@ export default function ModernNavbar() {
   return (
     <header className="absolute top-10 left-0 right-0 z-30 px-2 sm:px-6 pt-9 min-[380px]:pt-11 sm:pt-14 md:pt-16 pb-4 flex items-center justify-center bg-gradient-to-b from-[#0D0C10]/95 via-[#0D0C10]/65 to-transparent pointer-events-none select-none">
 
-      {/* Sacred Invocation in One Single Line with Swastik on Both Sides */}
-      <div className="flex items-center justify-center gap-1.5 min-[380px]:gap-2.5 sm:gap-3.5 max-w-[98vw] pointer-events-auto">
-        <span
-          className="text-gold-warm text-xs min-[380px]:text-sm sm:text-base md:text-xl lg:text-2xl drop-shadow-[0_0_8px_rgba(212,175,55,0.6)] leading-none select-none shrink-0"
-          aria-hidden="true"
-        >
-          卐
-        </span>
+      {/* Sacred Invocation with Shree Ganeshaya Namah and 2-line mobile Shloka */}
+      <div className="flex flex-col items-center justify-center gap-1 min-[380px]:gap-1.5 max-w-[98vw] pointer-events-auto text-center">
+        {/* Line 1: Shree Ganeshaya Namah */}
+        <div className="flex items-center justify-center gap-2">
+          <span
+            className="text-gold-warm text-xs sm:text-sm md:text-base drop-shadow-[0_0_8px_rgba(212,175,55,0.6)] leading-none select-none"
+            aria-hidden="true"
+          >
+            卐
+          </span>
+          <span
+            className="text-xs sm:text-sm md:text-base font-serif tracking-widest text-[#dfc07a] font-medium select-none"
+            style={{ fontFamily: 'var(--font-rozha, serif)' }}
+          >
+            ॥ श्री गणेशाय नमः ॥
+          </span>
+          <span
+            className="text-gold-warm text-xs sm:text-sm md:text-base drop-shadow-[0_0_8px_rgba(212,175,55,0.6)] leading-none select-none"
+            aria-hidden="true"
+          >
+            卐
+          </span>
+        </div>
+
+        {/* Line 2: Shloka (two lines on mobile, single or clean block on larger screens) */}
         <h2
-          className="text-[8.5px] min-[360px]:text-[10px] min-[420px]:text-[11.5px] sm:text-xs md:text-sm lg:text-base font-serif tracking-wide sm:tracking-wider whitespace-nowrap shimmer-gold font-medium select-none text-center"
+          className="text-[10px] min-[360px]:text-[11px] sm:text-xs md:text-sm font-serif tracking-wide sm:tracking-wider shimmer-gold font-medium select-none text-center leading-relaxed"
           style={{ fontFamily: 'var(--font-rozha, serif)' }}
         >
-          वक्रतुण्ड महाकाय सूर्यकोटि समप्रभः । निर्विघ्नं कुरुमेदेव सर्व कार्येषु सर्वदा ॥
+          <span className="block sm:inline">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभः ।</span>{' '}
+          <span className="block sm:inline">निर्विघ्नं कुरुमेदेव सर्व कार्येषु सर्वदा ॥</span>
         </h2>
-        <span
-          className="text-gold-warm text-xs min-[380px]:text-sm sm:text-base md:text-xl lg:text-2xl drop-shadow-[0_0_8px_rgba(212,175,55,0.6)] leading-none select-none shrink-0"
-          aria-hidden="true"
-        >
-          卐
-        </span>
       </div>
 
       {/* Floating subtle language toggle in top corner */}

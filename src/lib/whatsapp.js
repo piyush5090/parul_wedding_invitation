@@ -1,17 +1,21 @@
 import { RSVP_PHONE } from '@/content/config';
 
 /**
- * Opens WhatsApp with a prefilled bilingual RSVP message.
+ * Opens WhatsApp with a prefilled blessings or RSVP message.
  * @param {string} name - Guest name
- * @param {string} guests - Number of guests
- * @param {string[]} events - List of event names attending
- * @param {'en'|'hi'} lang - Language
- * @param {Function} messageBuilder - content.rsvp.whatsappMessage function
+ * @param {string} [message] - Blessing message
+ * @param {Function} [messageBuilder] - content.rsvp.whatsappMessage function
  */
-export function openWhatsAppRSVP({ name, guests, events, messageBuilder }) {
-  const eventsStr = Array.isArray(events) ? events.join(', ') : events;
-  const message = messageBuilder(name, guests, eventsStr);
-  const encoded = encodeURIComponent(message);
+export function openWhatsAppRSVP({ name, message, guests, events, messageBuilder }) {
+  let text = '';
+  if (typeof messageBuilder === 'function') {
+    text = messageBuilder(name, message, guests, events);
+  } else if (message) {
+    text = `Namaste 🙏\n${message}\n\n— *${name}*`;
+  } else {
+    text = `Namaste 🙏\nWith love and blessings from *${name}* for Parul & Shubham! 🌸`;
+  }
+  const encoded = encodeURIComponent(text);
   const url = `https://wa.me/${RSVP_PHONE}?text=${encoded}`;
   window.open(url, '_blank', 'noopener,noreferrer');
 }
@@ -20,3 +24,4 @@ export function openWhatsAppRSVP({ name, guests, events, messageBuilder }) {
 export function callRSVP() {
   window.location.href = `tel:+${RSVP_PHONE}`;
 }
+

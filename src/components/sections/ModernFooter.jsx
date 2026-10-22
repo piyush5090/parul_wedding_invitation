@@ -10,7 +10,7 @@ export default function ModernFooter({ onReplayIntro }) {
   return (
     <footer className="py-20 relative text-center border-t border-white/5 bg-[#0E0E10] px-6">
       <div className="max-w-2xl mx-auto flex flex-col items-center">
-        
+
         <h3
           className="text-3xl md:text-4xl shimmer-gold mb-3 font-serif"
           style={{ fontFamily: lang === 'hi' ? 'var(--font-rozha)' : 'var(--font-great-vibes)' }}
@@ -45,8 +45,17 @@ export default function ModernFooter({ onReplayIntro }) {
           </button>
         </div>
 
-        <p className="mt-10 text-[11px] text-ivory/30 tracking-widest uppercase">
-          {c.madeWith}
+        <p className="mt-8 text-xs text-ivory/60 tracking-wider">
+          Design and Developed by{' '}
+          <a
+            href="https://piyush-portfolio-25.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#c5a059] hover:text-[#dfc07a] underline decoration-[#c5a059]/40 underline-offset-4 font-medium transition-colors"
+          >
+            Piyush
+          </a>{' '}
+
         </p>
       </div>
     </footer>

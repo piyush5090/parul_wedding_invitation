@@ -44,7 +44,7 @@ const content = {
 
       bride: {
         label: 'BRIDE',
-        name: 'Parul Sharma',
+        name: 'Er. Parul Sharma',
         grandparentsLabel: 'Granddaughter of',
         grandparents: 'Shri Charansingh Sharma & Late Smt. Premadevi Sharma',
         parentsLabel: 'Daughter of',
@@ -57,7 +57,7 @@ const content = {
 
       groom: {
         label: 'GROOM',
-        name: 'Shubham Sharma',
+        name: 'Er. Shubham Sharma',
         grandparentsLabel: 'Grandson of',
         grandparents: 'Late Shri Harnarayan Sharma & Smt. Satyawati Devi Sharma',
         parentsLabel: 'Son of',
@@ -160,13 +160,31 @@ const content = {
       ],
     },
 
+    vidaai: {
+      eyebrow: 'A BLESSED FAREWELL',
+      title: 'Vidaai',
+      date: 'Saturday, 21 November 2026',
+      badge: 'NEW BEGINNINGS',
+      time: 'Morning 6:00 AM',
+      description:
+        'With moist eyes and full hearts, we bid the bride a loving farewell as she begins a new journey, carrying the blessings of both families.',
+      calendarBtn: 'Add to Calendar',
+      mapsBtn: 'View Venue Map',
+      venueLabel: 'VENUE',
+      threeTitle: 'VIDAAI AT DAWN',
+      threeHint: 'Interactive 3D · drag to look around',
+      threeAlt: 'Interactive 3D scene of Vidaai at dawn',
+      replayBtn: 'Replay sunrise',
+      footerLine: 'WITH LOVE AND BLESSINGS',
+    },
+
     couple: {
       bride: {
-        name: 'Parul Sharma',
+        name: 'Er. Parul Sharma',
         bio: 'A spirited engineer with a heart full of warmth, Parul brings light to every room she enters.',
       },
       groom: {
-        name: 'Shubham Sharma',
+        name: 'Er. Shubham Sharma',
         bio: "A dedicated engineer with a gentle soul, Shubham's quiet strength and kind smile complete every moment.",
       },
     },
@@ -272,17 +290,16 @@ const content = {
     },
 
     rsvp: {
-      heading: 'RSVP',
-      subheading: "We'd love to have you with us",
+      heading: 'Send Your Blessings',
+      subheading: 'Bless the couple with your love and warm wishes',
       nameLabel: 'Your Name / Family Name',
-      guestLabel: 'Number of Guests',
-      eventsLabel: 'Events Attending',
-      whatsappBtn: 'Send RSVP via WhatsApp',
+      messageLabel: 'Your Blessings & Wishes',
+      whatsappBtn: 'Send Blessings via WhatsApp',
       callBtn: 'Call Us',
       placeholderName: 'e.g. Sharma Family',
-      placeholderGuests: '2',
-      whatsappMessage: (name, guests, events) =>
-        `Namaste 🙏\nI am *${name}* and we will be attending the wedding of Parul & Shubham.\nGuests: *${guests}*\nEvents: *${events}*\n\nWith warm regards.`,
+      placeholderMessage: 'Wishing Parul & Shubham a lifetime of endless joy, love and harmony...',
+      whatsappMessage: (name, message) =>
+        `Namaste 🙏\nHeartiest congratulations to Parul & Shubham! 🌸\n\n"${message || 'Wishing you both a joyful and blessed married life!'}"\n\nWith love and blessings,\n*${name}*`,
     },
 
     footer: {
@@ -339,7 +356,7 @@ const content = {
 
       bride: {
         label: 'वधू',
-        name: 'पारुल शर्मा',
+        name: 'Er. पारुल शर्मा',
         grandparentsLabel: 'पौत्री',
         grandparents: 'श्री चरणसिंह शर्मा एवं स्व. श्रीमती प्रेमादेवी शर्मा',
         parentsLabel: 'पुत्री',
@@ -352,7 +369,7 @@ const content = {
 
       groom: {
         label: 'वर',
-        name: 'शुभम शर्मा',
+        name: 'Er. शुभम शर्मा',
         grandparentsLabel: 'पौत्र',
         grandparents: 'स्व. श्री हरनारायण शर्मा एवं श्रीमती सत्यवती देवी शर्मा',
         parentsLabel: 'पुत्र',
@@ -455,13 +472,31 @@ const content = {
       ],
     },
 
+    vidaai: {
+      eyebrow: 'आशीर्वाद सहित विदाई',
+      title: 'विदाई',
+      date: 'दि. 21 नवम्बर 2026, शनिवार',
+      badge: 'नई शुरुआत',
+      time: 'प्रातः 06 बजे',
+      description:
+        'नम आँखों और भरे हृदय से हम वधू को स्नेहपूर्ण विदाई देते हैं, जब वह दोनों परिवारों के आशीर्वाद के साथ अपने नए जीवन की यात्रा आरंभ करती हैं।',
+      calendarBtn: 'कैलेंडर में जोड़ें',
+      mapsBtn: 'वेन्यू मैप देखें',
+      venueLabel: 'विदाई स्थल',
+      threeTitle: 'विदाई - उषाकाल',
+      threeHint: 'इंटरैक्टिव 3D · देखने के लिए खींचें',
+      threeAlt: 'उषाकाल में विदाई का 3D दृश्य',
+      replayBtn: 'सूर्योदय फिर देखें',
+      footerLine: 'प्रेम और आशीर्वाद सहित',
+    },
+
     couple: {
       bride: {
-        name: 'पारुल शर्मा',
+        name: 'Er. पारुल शर्मा',
         bio: 'एक प्रतिभाशाली इंजीनियर, जिनकी मुस्कान से हर आँगन रोशन हो जाता है।',
       },
       groom: {
-        name: 'शुभम शर्मा',
+        name: 'Er. शुभम शर्मा',
         bio: 'एक समर्पित इंजीनियर, जिनका सौम्य स्वभाव और प्रेमिल हृदय हर पल को विशेष बनाता है।',
       },
     },
@@ -563,17 +598,16 @@ const content = {
     },
 
     rsvp: {
-      heading: 'उपस्थिति की सूचना',
-      subheading: 'आपकी उपस्थिति हमें प्रसन्न करेगी',
+      heading: 'शुभकामनाएँ एवं आशीर्वाद',
+      subheading: 'वर-वधू को अपने स्नेह और मंगल आशीर्वाद से अभिसिंचित करें',
       nameLabel: 'आपका नाम / परिवार का नाम',
-      guestLabel: 'अतिथियों की संख्या',
-      eventsLabel: 'किन कार्यक्रमों में पधारेंगे',
-      whatsappBtn: 'WhatsApp पर भेजें',
+      messageLabel: 'शुभकामना संदेश एवं आशीर्वाद',
+      whatsappBtn: 'WhatsApp पर शुभकामनाएँ भेजें',
       callBtn: 'फ़ोन करें',
       placeholderName: 'जैसे: शर्मा परिवार',
-      placeholderGuests: '2',
-      whatsappMessage: (name, guests, events) =>
-        `नमस्ते 🙏\nमैं *${name}* हूँ और पारुल-शुभम के विवाह समारोह में उपस्थित रहूँगा/रहूँगी।\nअतिथि: *${guests}*\nकार्यक्रम: *${events}*\n\nसादर प्रणाम।`,
+      placeholderMessage: 'पारुल एवं शुभम को सुखद वैवाहिक जीवन एवं अनंत खुशियों की हार्दिक मंगलकामनाएँ...',
+      whatsappMessage: (name, message) =>
+        `नमस्ते 🙏\nपारुल एवं शुभम के शुभ विवाह पर हार्दिक बधाई व मंगलकामनाएँ! 🌸\n\n"${message || 'सदा सुहागन रहो, जीवन में अपार खुशियाँ और प्रेम रहे!'}"\n\nस्नेह और आशीर्वाद सहित,\n*${name}*`,
     },
 
     footer: {

@@ -33,8 +33,18 @@ export function LanguageProvider({ children }) {
     });
   }, []);
 
+  const setLanguage = useCallback((selected) => {
+    if (selected === 'en' || selected === 'hi') {
+      setLang(selected);
+      try {
+        localStorage.setItem('wedding_lang', selected);
+        if (typeof document !== 'undefined') document.documentElement.lang = selected;
+      } catch (_) {}
+    }
+  }, []);
+
   return (
-    <LanguageContext.Provider value={{ lang, toggle }}>
+    <LanguageContext.Provider value={{ lang, toggle, setLanguage, selectLanguage: setLanguage }}>
       {children}
     </LanguageContext.Provider>
   );

@@ -27,7 +27,7 @@ export default function ModernHero({ guestName }) {
             {/* ps_1: Couple romantic dance */}
             <div className="relative h-full flex-shrink-0 border-[1.5px] border-white/80 rounded overflow-hidden bg-black shadow-2xl filter grayscale contrast-105 brightness-[0.6] aspect-[852/1280]">
               <Image
-                src="/Images/ps_1.jpeg"
+                src="/images/ps_1.jpeg"
                 alt=""
                 fill
                 sizes="(max-width: 768px) 50vw, 33vw"
@@ -38,7 +38,7 @@ export default function ModernHero({ guestName }) {
             {/* ps_3: Backlit couple silhouette */}
             <div className="relative h-full flex-shrink-0 border-[1.5px] border-white/80 rounded overflow-hidden bg-black shadow-2xl filter grayscale contrast-105 brightness-[0.6] aspect-[854/1280]">
               <Image
-                src="/Images/ps_3.jpeg"
+                src="/images/ps_3.jpeg"
                 alt=""
                 fill
                 sizes="(max-width: 768px) 50vw, 33vw"
@@ -49,7 +49,7 @@ export default function ModernHero({ guestName }) {
             {/* ps_4: Couple standing elegant portrait */}
             <div className="relative h-full flex-shrink-0 border-[1.5px] border-white/80 rounded overflow-hidden bg-black shadow-2xl filter grayscale contrast-105 brightness-[0.6] aspect-[720/1280]">
               <Image
-                src="/Images/ps_4.jpeg"
+                src="/images/ps_4.jpeg"
                 alt=""
                 fill
                 sizes="(max-width: 768px) 50vw, 33vw"
@@ -60,7 +60,7 @@ export default function ModernHero({ guestName }) {
             {/* ps_6: Center stage floral ring (16:9 crop removes top/bottom blurred bars) */}
             <div className="relative h-full flex-shrink-0 border-[1.5px] border-white/80 rounded overflow-hidden bg-black shadow-2xl filter grayscale contrast-105 brightness-[0.6] aspect-[16/9]">
               <Image
-                src="/Images/ps_6.jpeg"
+                src="/images/ps_6.jpeg"
                 alt=""
                 fill
                 sizes="(max-width: 768px) 60vw, 45vw"
@@ -71,7 +71,7 @@ export default function ModernHero({ guestName }) {
             {/* ps_8: Candid casual together (4:3 crop removes top/bottom solid bars) */}
             <div className="relative h-full flex-shrink-0 border-[1.5px] border-white/80 rounded overflow-hidden bg-black shadow-2xl filter grayscale contrast-105 brightness-[0.6] aspect-[4/3]">
               <Image
-                src="/Images/ps_8.jpeg"
+                src="/images/ps_8.jpeg"
                 alt=""
                 fill
                 sizes="(max-width: 768px) 60vw, 40vw"
@@ -82,7 +82,7 @@ export default function ModernHero({ guestName }) {
             {/* ps_2: Ring proposal ceremony (0.65 portrait crop removes left/right blurred bars) */}
             <div className="relative h-full flex-shrink-0 border-[1.5px] border-white/80 rounded overflow-hidden bg-black shadow-2xl filter grayscale contrast-105 brightness-[0.6] aspect-[0.65]">
               <Image
-                src="/Images/ps_2.jpeg"
+                src="/images/ps_2.jpeg"
                 alt=""
                 fill
                 sizes="(max-width: 768px) 50vw, 33vw"
@@ -94,22 +94,22 @@ export default function ModernHero({ guestName }) {
           {/* SEQUENCE 2 (DUPLICATED FOR SEAMLESS 140s LOOP) */}
           <div className="flex h-full items-center gap-4 pr-4">
             <div className="relative h-full flex-shrink-0 border-[1.5px] border-white/80 rounded overflow-hidden bg-black shadow-2xl filter grayscale contrast-105 brightness-[0.6] aspect-[852/1280]">
-              <Image src="/Images/ps_1.jpeg" alt="" fill sizes="33vw" className="object-cover object-center" />
+              <Image src="/images/ps_1.jpeg" alt="" fill sizes="33vw" className="object-cover object-center" />
             </div>
             <div className="relative h-full flex-shrink-0 border-[1.5px] border-white/80 rounded overflow-hidden bg-black shadow-2xl filter grayscale contrast-105 brightness-[0.6] aspect-[854/1280]">
-              <Image src="/Images/ps_3.jpeg" alt="" fill sizes="33vw" className="object-cover object-center" />
+              <Image src="/images/ps_3.jpeg" alt="" fill sizes="33vw" className="object-cover object-center" />
             </div>
             <div className="relative h-full flex-shrink-0 border-[1.5px] border-white/80 rounded overflow-hidden bg-black shadow-2xl filter grayscale contrast-105 brightness-[0.6] aspect-[720/1280]">
-              <Image src="/Images/ps_4.jpeg" alt="" fill sizes="33vw" className="object-cover object-top" />
+              <Image src="/images/ps_4.jpeg" alt="" fill sizes="33vw" className="object-cover object-top" />
             </div>
             <div className="relative h-full flex-shrink-0 border-[1.5px] border-white/80 rounded overflow-hidden bg-black shadow-2xl filter grayscale contrast-105 brightness-[0.6] aspect-[16/9]">
-              <Image src="/Images/ps_6.jpeg" alt="" fill sizes="45vw" className="object-cover object-center" />
+              <Image src="/images/ps_6.jpeg" alt="" fill sizes="45vw" className="object-cover object-center" />
             </div>
             <div className="relative h-full flex-shrink-0 border-[1.5px] border-white/80 rounded overflow-hidden bg-black shadow-2xl filter grayscale contrast-105 brightness-[0.6] aspect-[4/3]">
-              <Image src="/Images/ps_8.jpeg" alt="" fill sizes="40vw" className="object-cover object-center" />
+              <Image src="/images/ps_8.jpeg" alt="" fill sizes="40vw" className="object-cover object-center" />
             </div>
             <div className="relative h-full flex-shrink-0 border-[1.5px] border-white/80 rounded overflow-hidden bg-black shadow-2xl filter grayscale contrast-105 brightness-[0.6] aspect-[0.65]">
-              <Image src="/Images/ps_2.jpeg" alt="" fill sizes="33vw" className="object-cover object-center" />
+              <Image src="/images/ps_2.jpeg" alt="" fill sizes="33vw" className="object-cover object-center" />
             </div>
           </div>
 
@@ -150,7 +150,7 @@ export default function ModernHero({ guestName }) {
             
             <div className="relative w-full h-full rounded-t-full rounded-b-lg overflow-hidden bg-neutral-900 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.15)] group">
               <Image
-                src="/Images/ps_mid.jpeg"
+                src="/images/ps_mid.jpeg"
                 alt="Wedding portrait of bride Parul in a rose-pink lehenga holding a bouquet and groom Shubham in a tailored suit smiling together"
                 fill
                 priority

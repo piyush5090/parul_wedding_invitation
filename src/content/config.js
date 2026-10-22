@@ -5,17 +5,17 @@
  */
 
 // Audio — if the file is missing the music button is hidden gracefully
-export const MUSIC_SRC = '/audio/kesariya.mp3';
+export const MUSIC_SRC = '/audio/bg_song.mp3';
 
 // Bride & Groom individual portrait photos for the introduction section
 // Leave empty string '' to show the elegant dark panel with outline person icon
 export const COUPLE_PHOTOS = {
-  bride: '', // e.g. '/images/bride.jpg'
-  groom: '', // e.g. '/images/groom.jpg'
+  bride: '/images/parul_solo.jpeg',
+  groom: '/images/shubham_solo.jpeg',
 };
 
 // RSVP WhatsApp (E.164 format, no spaces)
-export const RSVP_PHONE = '919993476309';
+export const RSVP_PHONE = '916263392962';
 
 // Wedding hashtag
 export const HASHTAG = '#ParulWedShubham';
@@ -50,4 +50,15 @@ export const venues = {
   mataPoojan: {
     address: '', // empty by default: shows only "Nij Niwas (Family Residence), Ujjain"
   },
+  vidaai: {
+    name: '',
+    address: '',
+    mapQuery: '',
+  },
+};
+
+// Vidaai calendar timing config
+export const VIDAAI_CALENDAR = {
+  endTime: '07:00', // default 07:00 (marked "set by family" as invitation has no end time)
+  notes: 'Set by family',
 };

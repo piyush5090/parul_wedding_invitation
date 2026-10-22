@@ -6,13 +6,12 @@ import ModernHero from '@/components/hero/ModernHero';
 import BrideGroomSection from '@/components/sections/BrideGroomSection';
 import MataPoojanSection from '@/components/sections/MataPoojanSection';
 import WeddingCelebrations from '@/components/sections/WeddingCelebrations';
-import CoupleStorySection from '@/components/sections/CoupleStorySection';
+import VidaaiSection from '@/components/sections/VidaaiSection';
 import ModernCountdown from '@/components/sections/ModernCountdown';
-import ModernEvents from '@/components/sections/ModernEvents';
-import ModernGallery from '@/components/sections/ModernGallery';
 import ModernRsvpVenue from '@/components/sections/ModernRsvpVenue';
 import ModernFooter from '@/components/sections/ModernFooter';
 import ModernMusicButton from '@/components/ui/ModernMusicButton';
+import LanguageToast from '@/components/ui/LanguageToast';
 
 export default function WeddingPage() {
   const [guestName, setGuestName] = useState('');
@@ -40,6 +39,9 @@ export default function WeddingPage() {
       {/* Floating Sound Controller */}
       <ModernMusicButton />
 
+      {/* Language Selection Toast on Open */}
+      <LanguageToast />
+
       {/* Cinematic Modern Intro */}
       <ModernIntro />
 
@@ -55,19 +57,13 @@ export default function WeddingPage() {
       {/* 2c. The Wedding Celebrations */}
       <WeddingCelebrations />
 
-      {/* 3. Meet the Bride & Groom (Our Story) */}
-      <CoupleStorySection />
+      {/* 2d. Vidaai */}
+      <VidaaiSection />
 
-      {/* 4. Countdown to Forever */}
+      {/* 3. Countdown to Forever */}
       <ModernCountdown />
 
-      {/* 5. Celebrations & Itinerary with Three.js 3D Animations */}
-      <ModernEvents />
-
-      {/* 6. Visual Diary (Couple Gallery with Lightbox) */}
-      <ModernGallery />
-
-      {/* 7. Destination & Instant WhatsApp RSVP */}
+      {/* 4. Destination & Blessings */}
       <ModernRsvpVenue />
 
       {/* 8. Modern Footer */}

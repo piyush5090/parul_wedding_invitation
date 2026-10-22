@@ -13,37 +13,14 @@ export default function ModernRsvpVenue() {
   const cVenue = content[lang].venue;
 
   const [name, setName] = useState('');
-  const [guests, setGuests] = useState('2');
-  const [selectedEvents, setSelectedEvents] = useState([
-    'Lagna & Sagaai',
-    'Baraat Swagat',
-    'Ashirwad Samaroh',
-  ]);
-
-  const eventOptions = [
-    { id: 'mata-pujan', label: lang === 'hi' ? 'माता पूजन (15 नव.)' : 'Mata Pujan (15 Nov)' },
-    { id: 'sneh-bhoj', label: lang === 'hi' ? 'स्नेह भोज (15 नव.)' : 'Sneh Bhoj (15 Nov)' },
-    { id: 'lagna-sagaai', label: lang === 'hi' ? 'लग्न व सगाई (20 नव.)' : 'Lagna & Sagaai (20 Nov)' },
-    { id: 'baraat', label: lang === 'hi' ? 'बारात स्वागत (20 नव.)' : 'Baraat Swagat (20 Nov)' },
-    { id: 'ashirwad', label: lang === 'hi' ? 'आशीर्वाद समारोह (20 नव.)' : 'Ashirwad Samaroh (20 Nov)' },
-    { id: 'vidai', label: lang === 'hi' ? 'विदाई (21 नव.)' : 'Vidai (21 Nov)' },
-  ];
-
-  const toggleEvent = (label) => {
-    if (selectedEvents.includes(label)) {
-      setSelectedEvents(selectedEvents.filter((e) => e !== label));
-    } else {
-      setSelectedEvents([...selectedEvents, label]);
-    }
-  };
+  const [blessing, setBlessing] = useState('');
 
   const handleWhatsApp = (e) => {
     e.preventDefault();
     if (!name.trim()) return;
     openWhatsAppRSVP({
       name: name.trim(),
-      guests: guests || '1',
-      events: selectedEvents.length > 0 ? selectedEvents : ['All Wedding Celebrations'],
+      message: blessing.trim(),
       messageBuilder: cRsvp.whatsappMessage,
     });
   };
@@ -96,6 +73,7 @@ export default function ModernRsvpVenue() {
                   src="/images/couple/couple-05.jpg"
                   alt="Swarnabhoomi Venue"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
@@ -134,7 +112,7 @@ export default function ModernRsvpVenue() {
             </a>
           </motion.div>
 
-          {/* WhatsApp RSVP Form */}
+          {/* WhatsApp Blessings Form */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -158,47 +136,21 @@ export default function ModernRsvpVenue() {
 
               <div>
                 <label className="block text-xs uppercase tracking-widest text-gold-warm mb-2.5 font-medium">
-                  {cRsvp.guestLabel}
+                  {cRsvp.messageLabel}
                 </label>
-                <input
-                  type="number"
-                  min="1"
-                  max="20"
-                  value={guests}
-                  onChange={(e) => setGuests(e.target.value)}
-                  className="w-full px-5 py-4 rounded-xl bg-white/[0.03] border border-white/10 text-ivory focus:outline-none focus:border-gold-warm transition-colors text-sm"
+                <textarea
+                  rows={4}
+                  placeholder={cRsvp.placeholderMessage}
+                  value={blessing}
+                  onChange={(e) => setBlessing(e.target.value)}
+                  className="w-full px-5 py-4 rounded-xl bg-white/[0.03] border border-white/10 text-ivory placeholder-ivory/30 focus:outline-none focus:border-gold-warm transition-colors text-sm resize-none leading-relaxed"
                 />
               </div>
 
-              <div>
-                <label className="block text-xs uppercase tracking-widest text-gold-warm mb-2.5 font-medium">
-                  {cRsvp.eventsLabel}
-                </label>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-                  {eventOptions.map((ev) => {
-                    const active = selectedEvents.includes(ev.label);
-                    return (
-                      <button
-                        type="button"
-                        key={ev.id}
-                        onClick={() => toggleEvent(ev.label)}
-                        className={`text-xs px-3.5 py-3 rounded-xl border text-left transition-all cursor-pointer ${
-                          active
-                            ? 'bg-gold-warm/20 border-gold-warm text-gold-warm font-medium'
-                            : 'bg-white/[0.02] border-white/10 text-ivory/60 hover:border-white/20'
-                        }`}
-                      >
-                        {ev.label}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              <div className="pt-4 flex flex-col sm:flex-row gap-4">
+              <div className="pt-2 flex flex-col sm:flex-row gap-4">
                 <button
                   type="submit"
-                  className="flex-1 py-4 px-6 rounded-full bg-gold-warm text-[#0E0E10] font-semibold text-xs tracking-widest uppercase hover:bg-gold-metallic active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+                  className="flex-1 py-4 px-6 rounded-full bg-[#c5a059] hover:bg-[#dfc07a] text-[#0e0e10] font-semibold text-xs tracking-widest uppercase active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg"
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.92-9.91-9.92z"/>
