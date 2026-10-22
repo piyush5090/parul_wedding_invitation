@@ -206,18 +206,18 @@ function KalashIllustration() {
 }
 
 export default function WeddingCelebrations() {
-  const { language } = useLanguage();
+  const { lang } = useLanguage();
   const prefersReducedMotion = useReducedMotion();
   const [activeEventIndex, setActiveEventIndex] = useState(0);
 
-  const t = content[language] || content.en;
+  const t = content[lang] || content.en;
   const c = t.weddingCelebrations;
 
   if (!c) {
     return null;
   }
 
-  const isHindi = language === 'hi';
+  const isHindi = lang === 'hi';
   const headingFont = isHindi
     ? 'var(--font-rozha), serif'
     : 'var(--font-cormorant), Georgia, serif';

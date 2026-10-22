@@ -289,9 +289,31 @@ const content = {
       clickForMap: 'Click to load map',
     },
 
+    welcome: {
+      eyebrow: 'ATITHI DEVO BHAVA · CORDIAL INVITATION',
+      heading: 'You Are Warmly Welcome',
+      subheading: 'Awaiting your gracious presence with folded hands & open hearts',
+      quote: '“Atithi Devo Bhava” — A guest is the living embodiment of the Divine.',
+      message:
+        'Your presence and heartfelt blessings are the most cherished gift for us as we embark upon this sacred journey. With open arms, joyous hearts, and folded hands, both Sharma families cordially welcome you to grace the wedding celebrations of Parul & Shubham.',
+      hostsTitle: 'Warmly Welcoming You',
+      hostsBrideLabel: "Bride's Family",
+      hostsBride: 'Shri Kamalkant Sharma & Smt. Renu Sharma (Ujjain)',
+      hostsGroomLabel: "Groom's Family",
+      hostsGroom: 'Shri Sudhir Kumar Sharma & Smt. Rajbala Sharma (Aligarh)',
+      hostsAll: 'All Sharma Family, Relatives & Well-wishers',
+      venueTitle: 'The Destination Venue',
+      venueSubtitle: 'Swarnabhoomi, Aligarh',
+      venueAddress: 'Near Khereshwar Mandir, Khair Road, Aligarh (U.P.)',
+      mapButton: 'Get Directions on Google Maps',
+      callButton: 'Call for Assistance',
+      threeTitle: 'SWAGATAM · SACRED WELCOME',
+      threeHint: 'Interactive 3D • Move cursor or tap to sway the sacred kalash',
+    },
+
     rsvp: {
       heading: 'Send Your Blessings',
-      subheading: 'Bless the couple with your love and warm wishes',
+      subheading: 'Bless the couple with your love and visit',
       nameLabel: 'Your Name / Family Name',
       messageLabel: 'Your Blessings & Wishes',
       whatsappBtn: 'Send Blessings via WhatsApp',
@@ -595,6 +617,28 @@ const content = {
       address: 'निकट खेरेश्वर मंदिर, खैर रोड, अलीगढ़ (उ.प्र.)',
       mapButton: 'गूगल मैप में देखें',
       clickForMap: 'मानचित्र देखने के लिए क्लिक करें',
+    },
+
+    welcome: {
+      eyebrow: '॥ अतिथि देवो भवः ॥ · सादर सप्रेम आमंत्रण',
+      heading: 'स्वागताकांक्षी',
+      subheading: 'आपका हार्दिक व स्नेहिल स्वागत है',
+      quote: '“अतिथि देवो भवः” — पधारे हुए अतिथि साक्षात् ईश्वर का रूप होते हैं।',
+      message:
+        'आपकी गरिमामयी उपस्थिति और पावन आशीर्वाद ही इस मंगल प्रसंग की सबसे बड़ी शोभा हैं। अगाध स्नेह, आदर एवं करबद्ध प्रार्थना के साथ समस्त शर्मा परिवार पारुल एवं शुभम के शुभ विवाह में आपका हार्दिक व आत्मीय स्वागत करता है।',
+      hostsTitle: 'स्वागताकांक्षी एवं दर्शनाभिलाषी',
+      hostsBrideLabel: 'वधू पक्ष',
+      hostsBride: 'श्री कमलकांत शर्मा एवं श्रीमती रेनू शर्मा (उज्जैन)',
+      hostsGroomLabel: 'वर पक्ष',
+      hostsGroom: 'श्री सुधीर कुमार शर्मा एवं श्रीमती राजबाला शर्मा (अलीगढ़)',
+      hostsAll: 'समस्त शर्मा परिवार, स्वजन एवं मित्रगण',
+      venueTitle: 'विवाह स्थल',
+      venueSubtitle: 'स्वर्णभूमि, अलीगढ़',
+      venueAddress: 'निकट खेरेश्वर मंदिर, खैर रोड, अलीगढ़ (उ.प्र.)',
+      mapButton: 'गूगल मैप में देखें',
+      callButton: 'मार्गदर्शन हेतु संपर्क करें',
+      threeTitle: '॥ शुभ स्वागतम् ॥',
+      threeHint: 'इंटरएक्टिव 3D • स्पर्श करें या कर्सर घुमाएँ',
     },
 
     rsvp: {

@@ -110,8 +110,8 @@ export default function RootLayout({ children }) {
   ].join(' ');
 
   return (
-    <html lang="en">
-      <body className={fontClasses}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={fontClasses} suppressHydrationWarning>
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>

@@ -63,7 +63,7 @@ export default function WeddingPage() {
       {/* 3. Countdown to Forever */}
       <ModernCountdown />
 
-      {/* 4. Destination & Blessings */}
+      {/* 4. You Are Warmly Welcome & Destination */}
       <ModernRsvpVenue />
 
       {/* 8. Modern Footer */}
